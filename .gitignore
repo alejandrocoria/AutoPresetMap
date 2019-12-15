@@ -1,0 +1,24 @@
+# Builds & binaries
+build/
+run/
+bin/
+lib/
+.gradle/
+*.zip
+*.jar
+
+!gradle-wrapper.jar
+
+# Tmp files
+*~
+*#
+
+# IDEs
+.classpath
+.project
+.settings
+*.launch
+
+# Misc
+*.rej
+classes/

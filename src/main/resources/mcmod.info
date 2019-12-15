@@ -1,0 +1,16 @@
+[
+{
+  "modid": "autopresetmap",
+  "name": "AutoPresetMap",
+  "description": "Allows you to automatically change the minimap preset of Journey Map when you change the dimension.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://alejandrocoria.games/projects/AutoPresetMap/",
+  "updateUrl": "",
+  "authorList": ["Alejandro Coria (MemeSapiens)"],
+  "credits": "Thanks to Mysticdrew for helping me with my first mod!",
+  "logoFile": "assets/autopresetmap/images/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
