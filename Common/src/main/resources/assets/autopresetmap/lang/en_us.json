@@ -1,0 +1,9 @@
+﻿{
+  "autopresetmap.config.title": "AutoPresetMap",
+  "autopresetmap.config.default_label": "Default action",
+  "autopresetmap.jm_config_button": "AutoPresetMap...",
+  "autopresetmap.config.default": "Default",
+  "autopresetmap.config.nothing": "Nothing",
+  "autopresetmap.config.preset1": "Preset 1",
+  "autopresetmap.config.preset2": "Preset 2"
+}

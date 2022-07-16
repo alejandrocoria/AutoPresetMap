@@ -1,0 +1,37 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${version}",
+    "name": "${mod_name}",
+    "description": "${mod_description}",
+    "authors": [
+      "${mod_author}"
+    ],
+    "contact": {
+      "email": "${mod_email}",
+      "homepage": "${mod_homepage}",
+      "issues": "${mod_issues}",
+      "sources": "${mod_sources}"
+    },
+
+    "license": "${mod_license}",
+    "icon": "logo.png",
+
+    "environment": "client",
+    "entrypoints": {
+      "client": [
+        "games.alejandrocoria.autopresetmap.AutoPresetMap"
+      ],
+      "journeymap": [
+        "games.alejandrocoria.autopresetmap.plugin.JourneyMapPlugin"
+      ]
+    },
+
+    "depends": {
+      "fabricloader": ">=0.13",
+      "fabric": "*",
+      "minecraft": "1.18.x",
+      "java": ">=17",
+      "journeymap-fabric": "5.8.x"
+    }
+  }

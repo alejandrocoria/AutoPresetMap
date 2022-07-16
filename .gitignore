@@ -1,24 +1,24 @@
-# Builds & binaries
-build/
-run/
-bin/
-lib/
-.gradle/
-*.zip
-*.jar
-
-!gradle-wrapper.jar
-
-# Tmp files
-*~
-*#
-
-# IDEs
+# eclipse
+bin
+*.launch
+.settings
+.metadata
 .classpath
 .project
-.settings
-*.launch
 
-# Misc
-*.rej
-classes/
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea/*
+!.idea/scopes
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+.idea/

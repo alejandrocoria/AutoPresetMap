@@ -1,0 +1,60 @@
+plugins {
+    id 'fabric-loom' version '0.12-SNAPSHOT'
+    id 'idea'
+}
+
+archivesBaseName = "${mod_name}-Fabric-${minecraft_version}"
+
+repositories {
+    maven {
+        name = "JourneyMap (Public)"
+        url = "https://jm.gserv.me/repository/maven-public/"
+    }
+
+    maven {
+        url "https://www.cursemaven.com"
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    modApi group: 'info.journeymap', name: 'journeymap-api', version: project.jm_api_fabric_version, changing: true
+    modImplementation "curse.maven:journeymap-${jm_project_id}:${jm_fabric_file_id}"
+    implementation project(":Common")
+}
+
+loom {
+    runs {
+        client {
+            client()
+            setConfigName("Fabric Client")
+            ideConfigGenerated(true)
+            runDir("run")
+        }
+        server {
+            server()
+            serverWithGui()
+            setConfigName("Fabric Server")
+            ideConfigGenerated(true)
+            runDir("run")
+        }
+    }
+}
+
+processResources {
+    from project(":Common").sourceSets.main.resources
+
+    def buildProps = project.properties.clone()
+
+    filesMatching(['fabric.mod.json', 'pack.mcmeta']) {
+        expand buildProps
+    }
+}
+
+tasks.withType(JavaCompile) {
+    source(project(":Common").sourceSets.main.allSource)
+}
