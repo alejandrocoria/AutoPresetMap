@@ -28,7 +28,7 @@ public class AutoPresetMap {
 
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
-    public static void clientConnectedToServer(ClientPlayerNetworkEvent.LoggedInEvent event) {
+    public static void clientConnectedToServer(ClientPlayerNetworkEvent.LoggingIn event) {
         CommonClass.worldInit();
     }
 
