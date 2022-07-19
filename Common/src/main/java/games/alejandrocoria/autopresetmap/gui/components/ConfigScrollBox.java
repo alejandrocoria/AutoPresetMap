@@ -9,8 +9,7 @@ import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.PlayerModelPart;
 import org.apache.commons.lang3.text.WordUtils;
@@ -38,7 +37,7 @@ public class ConfigScrollBox extends AbstractWidget {
     private final OnChange responder;
 
     public ConfigScrollBox(Font font, int x, int y, int height, OnChange responder) {
-        super(x, y, WIDTH, max(height, ConfigScrollElement.HEIGHT), TextComponent.EMPTY);
+        super(x, y, WIDTH, max(height, ConfigScrollElement.HEIGHT), Component.empty());
         this.font = font;
         elements = new ArrayList<>();
         this.x = x;
@@ -227,21 +226,21 @@ public class ConfigScrollBox extends AbstractWidget {
         private final LocalPlayer player;
 
         public ConfigScrollElement(Font font, int x, int y, ResourceLocation dimension, CommonClass.Action action, @Nullable LocalPlayer player, OnChange responder) {
-            super(x, y, WIDTH, HEIGHT, new TextComponent(dimension.toString()));
+            super(x, y, WIDTH, HEIGHT, Component.literal(dimension.toString()));
 
             this.player = player;
 
             String name = dimension.getPath().replace("_", " ");
             name = WordUtils.capitalize(name);
-            dimensionName = new SimpleLabel(font, x + 24, y + 3, SimpleLabel.Align.LEFT, new TextComponent(name), 0xffffffff);
-            dimensionResource = new SimpleLabel(font, x + 24, y + 13, SimpleLabel.Align.LEFT, new TextComponent(dimension.toString()), 0xff606060);
+            dimensionName = new SimpleLabel(font, x + 24, y + 3, SimpleLabel.Align.LEFT, Component.literal(name), 0xffffffff);
+            dimensionResource = new SimpleLabel(font, x + 24, y + 13, SimpleLabel.Align.LEFT, Component.literal(dimension.toString()), 0xff606060);
 
             actionButton = new OptionButton(font, x + width - 106, y + 6, 100,
                     button -> responder.onChange(dimension, CommonClass.Action.values()[((OptionButton) button).getSelected()]));
-            actionButton.addOption(new TranslatableComponent("autopresetmap.config.default"));
-            actionButton.addOption(new TranslatableComponent("autopresetmap.config.nothing"));
-            actionButton.addOption(new TranslatableComponent("autopresetmap.config.preset1"));
-            actionButton.addOption(new TranslatableComponent("autopresetmap.config.preset2"));
+            actionButton.addOption(Component.translatable("autopresetmap.config.default"));
+            actionButton.addOption(Component.translatable("autopresetmap.config.nothing"));
+            actionButton.addOption(Component.translatable("autopresetmap.config.preset1"));
+            actionButton.addOption(Component.translatable("autopresetmap.config.preset2"));
             actionButton.setSelected(action.ordinal());
         }
 

@@ -8,7 +8,7 @@ import games.alejandrocoria.autopresetmap.gui.components.SimpleButton;
 import games.alejandrocoria.autopresetmap.gui.components.SimpleLabel;
 import games.alejandrocoria.autopresetmap.platform.Services;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -20,18 +20,18 @@ public class ConfigScreen extends Screen {
     SimpleButton doneButton;
 
     public ConfigScreen() {
-        super(new TranslatableComponent("autopresetmap.config.title"));
+        super(Component.translatable("autopresetmap.config.title"));
     }
 
     @Override
     public void init() {
         addRenderableOnly(new SimpleLabel(font, width / 2 - 5, 40, SimpleLabel.Align.RIGHT,
-                new TranslatableComponent("autopresetmap.config.default_label"), 0xffffff));
+                Component.translatable("autopresetmap.config.default_label"), 0xffffff));
 
         defaultConfigButton = new OptionButton(font, width / 2 + 5, 38, 100, b -> defaultConfigButtonPressed());
-        defaultConfigButton.addOption(new TranslatableComponent("autopresetmap.config.nothing"));
-        defaultConfigButton.addOption(new TranslatableComponent("autopresetmap.config.preset1"));
-        defaultConfigButton.addOption(new TranslatableComponent("autopresetmap.config.preset2"));
+        defaultConfigButton.addOption(Component.translatable("autopresetmap.config.nothing"));
+        defaultConfigButton.addOption(Component.translatable("autopresetmap.config.preset1"));
+        defaultConfigButton.addOption(Component.translatable("autopresetmap.config.preset2"));
         defaultConfigButton.setSelected(CommonClass.getDefaultAction().ordinal());
         addRenderableWidget(defaultConfigButton);
 
@@ -45,7 +45,7 @@ public class ConfigScreen extends Screen {
         }
 
         doneButton = new SimpleButton(font, width / 2 - 50, height - 30, 100,
-                new TranslatableComponent("gui.done"), b -> Services.PLATFORM.popScreenLayer());
+                Component.translatable("gui.done"), b -> Services.PLATFORM.popScreenLayer());
         addRenderableWidget(doneButton);
     }
 

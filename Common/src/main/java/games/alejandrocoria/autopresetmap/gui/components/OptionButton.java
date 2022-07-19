@@ -5,7 +5,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class OptionButton extends Button {
     private int selected = 0;
 
     public OptionButton(Font font, int x, int y, int width, Button.OnPress pressedAction) {
-        super(x, y, width, 12, TextComponent.EMPTY, pressedAction);
+        super(x, y, width, 12, Component.empty(), pressedAction);
         this.font = font;
         options = new ArrayList<>();
     }
