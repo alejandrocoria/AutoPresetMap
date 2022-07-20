@@ -4,6 +4,6 @@
   "autopresetmap.jm_config_button": "AutoPresetMap...",
   "autopresetmap.config.default": "Default",
   "autopresetmap.config.nothing": "Nothing",
-  "autopresetmap.config.preset1": "Preset 1",
-  "autopresetmap.config.preset2": "Preset 2"
+  "autopresetmap.config.preset1": "Minimap preset 1",
+  "autopresetmap.config.preset2": "Minimap preset 2"
 }
