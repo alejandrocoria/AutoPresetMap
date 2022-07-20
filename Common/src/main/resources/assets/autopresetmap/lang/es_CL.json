@@ -1,0 +1,9 @@
+﻿{
+  "autopresetmap.config.title": "AutoPresetMap",
+  "autopresetmap.config.default_label": "Acción predeterminada",
+  "autopresetmap.jm_config_button": "AutoPresetMap...",
+  "autopresetmap.config.default": "Predeterminada",
+  "autopresetmap.config.nothing": "Ninguna",
+  "autopresetmap.config.preset1": "Minimapa 1",
+  "autopresetmap.config.preset2": "Minimapa 2"
+}
